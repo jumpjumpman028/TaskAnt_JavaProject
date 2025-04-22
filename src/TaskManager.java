@@ -5,7 +5,10 @@ import java.util.stream.Collectors;
 
 public class TaskManager {
     private List<Task> taskList = new ArrayList<>();
-
+    private final static TaskManager instance = new TaskManager();
+    public static TaskManager getInstance() {
+        return instance;
+    }
     public void addTask(Task task){
         try{
             taskList.add(task);
